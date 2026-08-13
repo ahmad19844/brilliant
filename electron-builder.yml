@@ -1,0 +1,16 @@
+appId: com.bfia.cbt
+productName: BFIA Offline CBT
+directories:
+  output: release
+files:
+  - main/**
+  - server/**
+  - public/**
+  - assets/bfia-logo.png
+  - package.json
+win:
+  target: nsis
+  signAndEditExecutable: false
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

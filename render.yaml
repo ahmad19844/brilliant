@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: bfia-cbt-online
+    runtime: node
+    region: frankfurt
+    plan: starter
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    disk:
+      name: cbt-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /var/data/bfia-cbt.db
+      - key: COOKIE_SECURE
+        value: "true"
